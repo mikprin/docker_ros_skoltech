@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  ros_mikhail:
+    container_name: ros_mikhail
+    build: .
