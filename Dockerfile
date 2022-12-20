@@ -5,7 +5,8 @@ FROM osrf/ros:melodic-desktop-full
 # Install dependencies
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y curl && \
+    sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+RUN apt-get install -y curl && \
     apt install python3-pip -y && \
     apt-get update -y && \
     apt-get install -y ros-$ROS_DISTRO-rospy && \
@@ -17,10 +18,10 @@ RUN apt-get update -y && \
 RUN apt-get install -y ros-$ROS_DISTRO-catkin python-catkin-tools
 
 # Python dependencies
-
+RUN sudo apt-get install python-serial
 # RUN /usr/bin/python3 -m pip3 install pyserial
-RUN pip3 install pyserial
-RUN apt install -y python3-all-dev python3-rospkg
+# RUN pip3 install pyserial
+
 # Create catkin workspace
 RUN mkdir -p /catkin_ws/src
 
