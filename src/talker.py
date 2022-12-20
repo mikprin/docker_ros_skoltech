@@ -39,8 +39,9 @@
 import rospy
 from std_msgs.msg import String
 
-clock = 0.3
+clock = 0.5
 message = '1'
+massage_poweroff = "0"
 
 def talker():
     pub = rospy.Publisher('chatter', String, queue_size=10)
@@ -49,6 +50,8 @@ def talker():
     while not rospy.is_shutdown():
         rospy.loginfo('%s %s' %(message,rospy.get_time()))
         pub.publish(message)
+        rate.sleep()
+        pub.publish(massage_poweroff)
         rate.sleep()
 
 if __name__ == '__main__':

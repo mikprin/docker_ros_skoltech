@@ -42,8 +42,8 @@ import serial
 import time
 
 
-port = '/dev/ttyACM0'
-baudrate = 9600
+port = '/dev/ttyUSB0'
+baudrate = 115200
 
 def send_arduino_on():
     rospy.loginfo(rospy.get_caller_id()+" voltage on")

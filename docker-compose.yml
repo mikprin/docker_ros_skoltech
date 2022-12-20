@@ -3,3 +3,7 @@ services:
   ros_mikhail:
     container_name: ros_mikhail
     build: .
+    privileged: true
+    # command: bash -c "rosrun my_robot talker.py & rosrun my_robot listener.py &"
+    volumes:
+      - ${UART_PORT}:/dev/ttyUSB0

@@ -6,7 +6,7 @@ FROM osrf/ros:melodic-desktop-full
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-RUN apt-get install -y curl && \
+RUN apt-get install -y curl screen nano && \
     apt install python3-pip -y && \
     apt-get update -y && \
     apt-get install -y ros-$ROS_DISTRO-rospy && \
@@ -29,6 +29,8 @@ WORKDIR /catkin_ws
 
 COPY src /catkin_ws/src/my_robot/scripts
 
+COPY deploy.sh /catkin_ws/deploy.sh
+
 RUN catkin init
 
 RUN cd /catkin_ws/src && \
@@ -41,4 +43,5 @@ RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && \
     catkin build && \
     source /catkin_ws/devel/setup.bash"
 
-CMD ["roscore"]
+CMD ["./deploy.sh"]
+# CMD [ "roscore" ]
