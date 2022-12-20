@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Deploy the ROS nodes
+
 source /opt/ros/$ROS_DISTRO/setup.bash
 source /catkin_ws/devel/setup.bash
 
