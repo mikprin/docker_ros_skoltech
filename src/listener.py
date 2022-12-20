@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Software License Agreement (BSD License)
 #
 # Copyright (c) 2008, Willow Garage, Inc.
@@ -33,7 +33,7 @@
 #
 # Revision $Id$
 
-## Simple talker demo that listens to std_msgs/Strings published 
+## Simple talker demo that listens to std_msgs/Strings published
 ## to the 'chatter' topic
 
 import rospy
