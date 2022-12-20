@@ -37,7 +37,7 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 RUN echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && \
-    source /catkin_ws/devel/setup.bash \"
-    && catkin build"
+    catkin build && \
+    source /catkin_ws/devel/setup.bash"
 
 CMD ["roscore"]
