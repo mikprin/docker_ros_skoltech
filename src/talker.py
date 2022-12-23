@@ -39,7 +39,7 @@
 import rospy
 from std_msgs.msg import String
 
-clock = 0.5
+clock = 1
 message = '1'
 massage_poweroff = "0"
 

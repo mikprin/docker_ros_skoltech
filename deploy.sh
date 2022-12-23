@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Deploy the ROS nodes
-
+neofetch 
 source /opt/ros/$ROS_DISTRO/setup.bash
 source /catkin_ws/devel/setup.bash
 

@@ -6,6 +6,7 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 RUN apt-get install -y curl screen nano && \
+    apt-get install neofetch && \
     apt install python3-pip -y && \
     apt-get update -y && \
     apt-get install -y ros-$ROS_DISTRO-rospy && \
